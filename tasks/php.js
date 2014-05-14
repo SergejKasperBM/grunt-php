@@ -46,6 +46,10 @@ module.exports = function (grunt) {
 			args.push(options.router);
 		}
 
+		if (options.ini) {
+			args.push('-c', options.ini);
+		}
+
 		var cp = spawn(options.bin, args, {
 			cwd: path.resolve(options.base),
 			stdio: 'inherit'
