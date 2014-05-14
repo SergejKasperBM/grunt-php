@@ -42,12 +42,12 @@ module.exports = function (grunt) {
 		var host = options.hostname + ':' + options.port;
 		var args = ['-S', host];
 
-		if (options.router) {
-			args.push(options.router);
-		}
-
 		if (options.ini) {
 			args.push('-c', options.ini);
+		}
+
+		if (options.router) {
+			args.push(options.router);
 		}
 
 		var cp = spawn(options.bin, args, {
