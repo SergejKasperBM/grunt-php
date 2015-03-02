@@ -129,6 +129,13 @@ Default: `false`
 
 Open the server in the browser when the task is triggered.
 
+#### log
+
+Type: `Boolean`  
+Default: `false`
+
+Show php-logs in console.
+
 #### router
 
 Type: `String`  
