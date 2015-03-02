@@ -50,10 +50,13 @@ module.exports = function (grunt) {
 			args.push(options.router);
 		}
 
-		var cp = spawn(options.bin, args, {
-			cwd: path.resolve(options.base),
-			stdio: 'inherit'
-		});
+		var cpArgs = {
+			cwd: path.resolve(options.base)
+		};
+		//Log to console if log enabled
+		if (options.log) cpArgs.stdio = 'inherit';
+			
+		var cp = spawn(options.bin, args, cpArgs);
 
 		// quit PHP when grunt is done
 		process.on('exit', function () {
